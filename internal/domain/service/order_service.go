@@ -50,10 +50,10 @@ func (s *orderService) CreateOrder(orderID string, cart []model.CartItem, cardNu
 
 	total := 0.0
 	for _, item := range cart {
-		food, err := s.foodRepo.GetByID(item.FoodID)
-		if err != nil {
+		food, _ := s.foodRepo.GetByID(item.FoodID)
+		/*if err != nil {
 			return nil, err
-		}
+		}*/
 		if food.Quantity < item.Qty {
 			return nil, fmt.Errorf("สินค้า %s ไม่เพียงพอในคลัง", food.Name)
 		}
@@ -75,10 +75,10 @@ func (s *orderService) CreateOrder(orderID string, cart []model.CartItem, cardNu
 			s.foodRepo.UpdateQuantity(item.FoodID, food.Quantity-item.Qty)
 		}
 	}
-
-	if err := s.orderRepo.Save(order); err != nil {
+	s.orderRepo.Save(order)
+	/*if err := s.orderRepo.Save(order); err != nil {
 		return nil, err
-	}
+	}*/
 
 	return order, nil
 }
