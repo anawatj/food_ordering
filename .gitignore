@@ -1,0 +1,67 @@
+# Binaries for programs and plugins
+*.exe
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+
+# Go workspace stuff
+bin/
+pkg/
+vendor/
+
+# Build artifact
+/build
+/dist
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Dependency directories (when not using go modules)
+Godeps/
+
+# Test coverage
+coverage.out
+*.coverprofile
+*.cov
+
+# IDEs and editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Env / config
+.env
+.env.*
+
+# Cache / temp
+*.tmp
+*.bak
+*.old
+
+# GoLand
+*.iml
+*.ipr
+*.iws
+
+# Local database / state (optional)
+*.sqlite
+*.db
+*.bolt
+
+# Firebase / other storage
+firebase-debug.log
+
+# Test results
+test-results/
+junit.xml
+
+# Node modules (if frontend or hybrid)
+node_modules/
+
+# Go module cache (optional)
+go.sum
